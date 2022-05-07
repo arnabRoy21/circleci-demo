@@ -1,14 +1,15 @@
 version: 2.1
 jobs:
   build:
+    working_directory: /tmp
     docker:
       - image: alpine:3.15
     steps:
       - run:
           name: The First Step
           command: |
-            echo 'Hello World!'
-            ls -lrt
+            echo 'Hello World!' >> file.txt
+            who am i
             pwd
             df -h
             cat /etc/*release
