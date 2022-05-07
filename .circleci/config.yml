@@ -9,7 +9,6 @@ jobs:
           name: The First Step
           command: |
             echo 'Hello World!' >> file.txt
-            who am i
             pwd
             df -h
             cat /etc/*release
