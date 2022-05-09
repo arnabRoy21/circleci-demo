@@ -4,18 +4,16 @@ orbs:
 jobs: 
   build:
     executor: heroku/default
-  steps:
-    - checkout
-    - heroku/install
-    - run:
-        command: |
-          ls -lrt
-          cat /etc/*release
-          heroku --version
+    steps:
+      - checkout
+      - heroku/install
+      - run:
+          command: |
+            ls -lrt
+            cat /etc/*release
+            heroku --version
 
 workflows:
   heroku_deploy:
     jobs:
       - build
-
-
