@@ -2,21 +2,21 @@ version: 2.1
 orbs: 
   heroku: circleci/heroku@1.2.6
 jobs: 
-  build:
+  deploy:
     executor: heroku/default
     steps:
       - checkout
       - run:
           command: |
-            ls -lrt
-            cat /etc/*release
             pwd
-    steps:
-      - run:
-          command: |
-            whoami
+            ls -lrt
+      - heroku/install
+      - check-authentication
+      - heroku/push-docker-image
+      - release-docker-image
+
 
 workflows:
   heroku_deploy:
     jobs:
-      - build
+      - deploy

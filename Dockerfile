@@ -5,5 +5,6 @@ WORKDIR /app
 COPY app.py /app/
 COPY requirements.txt /app/
 RUN ls -lrt
+RUN cat /etc/*release
 RUN pip install -r requirements.txt
 CMD [ "python", "app.py" ]
