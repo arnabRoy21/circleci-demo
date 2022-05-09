@@ -10,7 +10,7 @@ jobs:
           command: |
             pwd
             ls -lrt
-            docker ps
+            sudo service docker start
       - heroku/install
       - heroku/check-authentication
       - heroku/push-docker-image
