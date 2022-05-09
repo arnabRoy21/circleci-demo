@@ -8,4 +8,4 @@ RUN ls -lrt
 RUN cat /etc/*release
 RUN whoami
 RUN pip install -r requirements.txt
-CMD [ "gunicorn", "--bind 0.0.0.0:$PORT", "app:app" ]
+CMD gunicorn --bind 0.0.0.0:$PORT app:app
