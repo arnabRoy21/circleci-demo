@@ -6,6 +6,8 @@ jobs:
     executor: heroku/default
     steps:
       - checkout
+      - setup_remote_docker:
+          version: 20.10.14
       - run:
           command: |
             pwd
