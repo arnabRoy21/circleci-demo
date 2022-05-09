@@ -14,8 +14,10 @@ jobs:
             whoami
       - heroku/install
       - heroku/check-authentication
-      - heroku/push-docker-image
-      - heroku/release-docker-image
+      - run:
+          command: |
+            heroku container:push web -a $HEROKU_APP_NAME
+            heroku container:release web -a $HEROKU_APP_NAME
 
 
 workflows:
