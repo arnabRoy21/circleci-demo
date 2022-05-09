@@ -13,7 +13,7 @@ jobs:
       - heroku/install
       - heroku/check-authentication
       - heroku/push-docker-image
-      - release-docker-image
+      - heroku/release-docker-image
 
 
 workflows:
