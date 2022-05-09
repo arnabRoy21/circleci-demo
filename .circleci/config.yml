@@ -9,8 +9,8 @@ jobs:
       - run:
           command: |
             pwd
-            ls -lrt
-            sudo service docker start
+            whoami
+            service docker start
       - heroku/install
       - heroku/check-authentication
       - heroku/push-docker-image
