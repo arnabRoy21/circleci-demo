@@ -6,12 +6,15 @@ jobs:
     executor: heroku/default
     steps:
       - checkout
-      - heroku/install
       - run:
           command: |
             ls -lrt
             cat /etc/*release
-            heroku --version
+            pwd
+    steps:
+      - run:
+          command: |
+            whoami
 
 workflows:
   heroku_deploy:
