@@ -7,4 +7,4 @@ COPY requirements.txt /app/
 RUN ls -lrt
 RUN cat /etc/*release
 RUN pip install -r requirements.txt
-CMD [ "python", "app.py" ]
+CMD [ "gunicorn", "--bind 0.0.0.0:$PORT", "app:app" ]
