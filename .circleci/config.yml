@@ -8,8 +8,6 @@ jobs:
       - checkout
       - setup_remote_docker:
           version: 20.10.14
-      - run:
-          command: |
       - heroku/install
       - heroku/check-authentication
       - run:
