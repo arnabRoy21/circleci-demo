@@ -12,7 +12,6 @@ jobs:
           command: |
             pwd
             whoami
-            service docker start
       - heroku/install
       - heroku/check-authentication
       - heroku/push-docker-image
