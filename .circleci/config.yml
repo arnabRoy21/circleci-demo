@@ -9,9 +9,9 @@ jobs:
     - heroku/install
     - run:
         command: |
-            ls -lrt
-            cat /etc/*release
-            heroku --version
+          ls -lrt
+          cat /etc/*release
+          heroku --version
 
 workflows:
   heroku_deploy:
