@@ -1,14 +1,18 @@
 version: 2.1
+orbs:
+  heroku: circleci/heroku@x.y
 jobs:
-  build:
-    working_directory: /tmp
-    docker:
-      - image: alpine:3.15
+  deploy:
+    executor: heroku/default
     steps:
+      - checkout
+      - heroku/install
       - run:
-          name: The First Step
-          command: |
-            echo 'Hello World!' >> file.txt
-            pwd
-            df -h
-            cat /etc/*release
+          command: >
+            echo "The command above installs Heroku, the command below deploys.
+            What you do inbetween is up to you!"
+      - heroku/deploy-via-git
+workflows:
+  heroku_deploy:
+    jobs:
+      - deploy
